@@ -1,0 +1,32 @@
+ Pieces are encoded as K for king, Q for queen, R for rook, B for bishop, and N for knight.
+ O-O (for kingside castling) and O-O-O (queenside castling).
+
+Q1 : 
+How many rounds did the game last? 
+(a round is simply a pair of moves by each of the players, or the final move resulting in checkmate)
+
+cat input.txt | fmt -w1 | grep '\.' | cut -d '.' -f 1 | wc -l
+
+Q2 : 
+How many pieces did Belle capture in this game?
+cat input.txt | fmt -w1 | cut -f 1 | grep '\.' | grep 'x' | wc -l
+
+Q3 : 
+How many pieces did Belle capture with a pawn in this game?
+cat input.txt | fmt -w1 | cut -f 1 | grep '\.' | grep 'x' | cut -d '.' -f 2 | grep -v '[A-Z]' | wc -l
+
+
+Q4 : 
+Create a table describing how many captures were made by each type of piece
+(king, queen, rook, bishop or knight) in this game by Belle, not counting captures made by pawns.
+The output format must be a number followed by K, Q, R, B or N to denote each type, one line per piece,
+sorted in descending order, for example:
+4 Q
+2 B
+1 R
+
+Q5 : 
+Same as Q4 except captures made by pawns must be counted as well (use P to denote pawns)
+
+Q6 :
+Which was the type of piece (K, Q, R, B, N or P) that Belle used the most?

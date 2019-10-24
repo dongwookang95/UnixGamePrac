@@ -1,0 +1,8 @@
+
+Extract the last name of each person and sort the list of last names in alphabetical order.
+
+We have already provided the command to extract the last name. Can you find the command to sort lines?
+
+When you're happy with your code, press the 'Submit' button to validate your solution.
+
+cut -d'' -f-1 input.txt | sort
